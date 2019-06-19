@@ -5,7 +5,7 @@ const Mapper = require('./../lib/mapper')
 
 //  Mock out the DOM and CANVAS
 const JSDOM = require('jsdom').JSDOM
-global.window = (new JSDOM('<!DOCTYPE html><div id="target"></div>')).window
+global.window = (new JSDOM('<!DOCTYPE html><div id="target"></div></html>')).window
 global.document = window.document
 window.HTMLCanvasElement.prototype.getContext = require('./mock-canvas')
 
