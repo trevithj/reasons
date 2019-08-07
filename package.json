@@ -10,11 +10,12 @@
     "array-unique": "^0.3.2",
     "findandreplacedomtext": "0.4.6",
     "keycode": "^2.2.0",
-    "uuid": "3.3.2"
+    "uuid": "3.3.2",
+    "hammerjs": "^2.0.8"
   },
   "devDependencies": {
     "browserify": "^16.2.3",
-    "canvas-prebuilt": "^2.0.0-alpha.14",
+    "canvas": "2.5.0",
     "jsdom": "^11.0.0",
     "mocha": "^5.2.0",
     "npm": "^6.9.0",
@@ -25,7 +26,8 @@
   },
   "scripts": {
     "build": "browserify lib/reasons.js -s Reasons -o reasons.js",
-    "minify": "uglifyjs reasons.js -o reasons.min.js",
+    "deploy": "./deploy.sh",
+    "minify": "npm run build && uglifyjs reasons.js -o reasons.min.js",
     "test": "npm run build && mocha"
   },
   "repository": {
